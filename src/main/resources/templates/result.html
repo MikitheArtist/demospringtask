@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fuel consumption</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="title">All fuel consumptions</div>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>rout</th>
+                <th>fuel</th>
+                <th>distance</th>
+                <th>fuel_price</th>
+                <th>avg_consumption</th>
+                <th>total_coast</th>
+                <th>total_fuel</th>
+                <th>delete</th>
+                <th>edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="fuelCons : ${fuelConsumptions}">
+                <td th:text="${fuelCons.id}"></td>
+                <td th:text="${fuelCons.rout}"></td>
+                <td th:text="${fuelCons.fuel}"></td>
+                <td th:text="${fuelCons.distance}"></td>
+                <td th:text="${fuelCons.fuelPrice}"></td>
+                <td th:text="${fuelCons.avgConsumption}"></td>
+                <td th:text="${fuelCons.totalCoast}"></td>
+                <td th:text="${fuelCons.totalFuel}"></td>
+                <td><a th:href="@{/delete/{id}(id=${fuelCons.id})}">delete</a></td>
+                <td><a th:href="@{/edit/{id}(id=${fuelCons.id})}">edit</a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="submit">
+        <a href="index">Back</a>
+    </div>
+</div>
+
+
+</body>
+</html>

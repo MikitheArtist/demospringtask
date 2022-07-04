@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit page</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+ <body>
+    <div class="container">
+        <div class="title">Update fuel consumption calculator</div>
+
+        <div class="fuel_calc-form">
+            <form action="#" th:action="@{/update/{id}(id=${fuelConsumption.id})}" th:object="${fuelConsumption}"
+                  method="post">
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="rout">Rout</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="rout" type="text" th:field="*{rout}" name="rout">
+                    </div>
+                    <div class="form-measure"></div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="fuel">Fuel</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="fuel" type="text" th:field="*{fuel}" name="fuel">
+                    </div>
+                    <div class="form-measure"></div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="dist">Distance</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="dist" type="text" th:field="*{distance}" name="distance">
+                    </div>
+                    <div class="form-measure">km</div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="price">Fuel price</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="price" type="text" th:field="*{fuelPrice}" name="fuelPrice">
+                    </div>
+                    <div class="form-measure">UAH/l</div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="consump">Average fuel consumption</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="consump" type="text" th:field="*{avgConsumption}" name="avgConsumption">
+                    </div>
+                    <div class="form-measure">l/100km</div>
+                </div>
+
+                <div class="form-button-place">
+                    <input class="submit" type="submit" value="Update">
+                </div>
+            </form>
+        </div>
+        <div class="submit">
+            <a href="/index">Back</a>
+        </div>
+
+    </div>
+
+ </body>
+</html>

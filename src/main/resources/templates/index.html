@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Start page</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Simple fuel consumption calculator</div>
+
+        <div class="fuel_calc-form">
+            <form action="add" class="form" method="post">
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="rout">Rout</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="rout" type="text" name="rout" required>
+                    </div>
+                    <div class="form-measure"></div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="fuel">Fuel</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="fuel" type="text" name="fuel" required>
+                    </div>
+                    <div class="form-measure"></div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="dist">Distance</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="dist" type="text" name="distance" required>
+                    </div>
+                    <div class="form-measure">km</div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="price">Fuel price</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="price" type="text" name="fuelPrice" required>
+                    </div>
+                    <div class="form-measure">UAH/l</div>
+                </div>
+
+                <div class="form-line">
+                    <div class="form-label">
+                        <label for="consump">Average fuel consumption</label>
+                    </div>
+                    <div class="form-input">
+                        <input id="consump" type="text" name="avgConsumption" required>
+                    </div>
+                    <div class="form-measure">l/100km</div>
+                </div>
+
+                <div class="form-button-place">
+                    <input class="submit" type="submit" value="Calculate">
+                </div>
+            </form>
+        </div>
+        <div class="submit">
+            <a href="list">Show All</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
